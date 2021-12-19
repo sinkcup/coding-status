@@ -48,7 +48,17 @@ pipeline {
           sh 'git add junit.xml'
           sh """
           git commit -m "docs: test ${currentBuild.currentResult}"
+          TZ=Asia/Shanghai git log --reverse --since=midnight > git.log
+          grep 'Date' git.log > date.log
           git push origin ${DATA_BRANCH}
+          git checkout main
+          php index.php > /tmp/index.html
+          git checkout gh-pages || git checkout --orphan gh-pages
+          git rm --cached *
+          cp /tmp/index.html index.html
+          git add index.html
+          git commit -m 'docs: update'
+          git push --force origin gh-pages
           """
         }
       }

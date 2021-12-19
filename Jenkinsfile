@@ -24,6 +24,7 @@ pipeline {
             credentialsId: CREDENTIALS_ID
           ]]
         ])
+        sh 'cp index.php template.html /root/'
         sh "git checkout ${DATA_BRANCH} || git checkout --orphan ${DATA_BRANCH}"
         sh 'git rm --cached *'
         sh """
@@ -48,7 +49,16 @@ pipeline {
           sh 'git add junit.xml'
           sh """
           git commit -m "docs: test ${currentBuild.currentResult}"
+          TZ=Asia/Shanghai git log --reverse --since=midnight > git.log
+          grep 'Date' git.log > date.log
           git push origin ${DATA_BRANCH}
+          cp /root/index.php /root/template.html .
+          php index.php > /root/index.html
+          git checkout gh-pages
+          cp /root/index.html index.html
+          git add index.html
+          git commit -m 'docs: update'
+          git push --force origin gh-pages
           """
         }
       }

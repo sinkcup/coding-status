@@ -20,7 +20,7 @@ if ($handle) {
         $date = trim($tmp[1]);
         $thisTime = strtotime($date);
         $dt->setTimestamp($thisTime);
-        $ciData[$dt->format("H") * 60 + $dt->format("i") % 5 * 5] = 'available';
+        $ciData[$dt->format("H") * 60 + floor($dt->format("i") / 5) * 5] = 'available';
     }
     fclose($handle);
 }

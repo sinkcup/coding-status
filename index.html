@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="cmn-Hans-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>CODING Status Dashboard</title>
+    <link href="https://assets.codehub.cn/static/favicon.ico" rel="icon">
+    <style>
+        body {
+            font-family: "open sans", arial, sans-serif
+        }
+
+        main {
+            margin: auto;
+            max-width: 978px
+        }
+
+        .main-dashboard-table {
+            border-collapse: collapse;
+            width: 100%
+        }
+
+        .main-dashboard-table td {
+            border: 1px solid #eee;
+            font-size: 13px;
+            padding: 15px 0;
+            position: relative;
+            width: 10%
+        }
+
+        .main-dashboard-table td:first-child {
+            border-left: none
+        }
+
+        .main-dashboard-table td:last-child {
+            border-right: none
+        }
+
+        .main-dashboard-table td.product-name {
+            padding-right: 5px;
+            white-space: nowrap
+        }
+
+        .product-hour {
+            background-color: #fcfcfc;
+            text-align: center
+        }
+
+        .date-offset {
+            position: relative;
+            right: 100%
+        }
+
+        .date-header {
+            color: #767676;
+            font-size: 13px;
+            font-weight: normal;
+            position: relative;
+            right: -4px;
+            text-align: right
+        }
+
+        .status-container {
+            position: absolute;
+            top: 36%;
+            z-index: 9999
+        }
+
+        .status-container.end-marker {
+            left: 100%
+        }
+
+        .status-container .status-icon {
+            left: -8px
+        }
+
+        .status-icon {
+            border-radius: 15px;
+            display: inline-block;
+            height: 15px;
+            position: relative;
+            width: 15px
+        }
+
+        .status-icon.available {
+            background-color: #0da960
+        }
+
+        .status-icon.available::after {
+            bottom: 1.5px;
+            color: #fff;
+            content: '✓';
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            width: 15px
+        }
+
+        .status-icon.disruption {
+            background-color: #ff8000
+        }
+
+        .status-icon.disruption::after {
+            bottom: 1.5px;
+            color: #fff;
+            content: '!';
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            width: 15px
+        }
+
+        .status-icon.outage {
+            background-color: #dd4b39
+        }
+
+        .status-icon.outage::after {
+            bottom: 1.5px;
+            color: #fff;
+            content: '×';
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            width: 15px
+        }
+
+        .status-piece {
+            display: inline-block;
+            height: 1em;
+            width: 0.3472%;
+            min-width: 1px;
+        }
+        .status-piece.available {
+            background-color: #0da960;
+        }
+        .status-piece.disruption {
+            background-color: #ff8000;
+        }
+    </style>
+</head>
+
+<body>
+    <psd-dashboard-top-bar class="mPVexkcpuTk__intro">
+        <style>
+            header {
+                min-height: 64px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #eee;
+                margin: auto;
+                max-width: 978px
+            }
+
+            header .mPVexkcpuTk__dashboard-logo {
+                float: left;
+                height: 40px
+            }
+        </style>
+        <header> <img
+                    class="mPVexkcpuTk__dashboard-logo"
+                    src="https://help-assets.codehub.cn/enterprise/guanwang/CODING.svg" alt=""> </header>
+    </psd-dashboard-top-bar>
+    <main>
+        <h1>
+            <style>
+                h1 {
+                    color: #444;
+                    font-size: 18px;
+                    font-weight: 600
+                }
+            </style>CODING.net Status Dashboard
+        </h1>
+        <div>
+            <style>
+                .lQjRvVaKLNV__banner {
+                    background-color: #fff176;
+                    border-radius: 5px;
+                    padding: 5px 8px;
+                    margin: 8px
+                }
+            </style>
+        </div>
+
+        <table class="main-dashboard-table">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">0</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">3</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">6</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">9am</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">12</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">15</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">18pm</div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="date-offset">
+                            <div class="date-header">21</div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="product-name"> 持续集成 </td>
+                    <td class="product-hour" colspan="8">
+                        <span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece available'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece available'></span><span class='status-piece available'></span><span class='status-piece available'></span><span class='status-piece available'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece available'></span><span class='status-piece disruption'></span><span class='status-piece available'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece disruption'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span><span class='status-piece unknown'></span>                    </td>
+                </tr>
+                <tr>
+                    <td class="product-name"> 项目协同 </td>
+                    <td class="product-hour" colspan="8">
+                        TODO
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-name"> 代码仓库 </td>
+                    <td class="product-hour" colspan="8">
+                        TODO
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-name"> 制品仓库 </td>
+                    <td class="product-hour"> </td>
+                    <td class="product-hour"> </td>
+                    <td class="product-hour"> </td>
+                    <td class="product-hour"> TO </td>
+                    <td class="product-hour"> DO </td>
+                    <td class="product-hour"> </td>
+                    <td class="product-hour"> </td>
+                    <td class="product-hour"> </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="hS6GEzRhW2F__table-documentation">
+            <style>
+                ul.hS6GEzRhW2F__table-documentation {
+                    color: #767676;
+                    display: flex;
+                    flex-wrap: wrap;
+                    font-size: 13px;
+                    justify-content: flex-end;
+                    list-style: none;
+                    margin-left: 2.5px;
+                    margin-right: 2.5px;
+                    padding: 0
+                }
+
+                ul.hS6GEzRhW2F__table-documentation li {
+                    display: inline-block;
+                    margin-left: 2.5px;
+                    margin-right: 2.5px
+                }
+
+                ul.hS6GEzRhW2F__table-documentation .hS6GEzRhW2F__utc-display {
+                    flex-basis: 20%;
+                    flex-grow: 1
+                }
+
+                ul.hS6GEzRhW2F__table-documentation .hS6GEzRhW2F__dot-after::after {
+                    content: '\002022';
+                    margin-left: 5px
+                }
+            </style>
+            
+            <li class="hS6GEzRhW2F__utc-display">时区：UTC+8 亚洲/上海</li>
+            <li class="hS6GEzRhW2F__dot-after hS6GEzRhW2F__history"><a
+                    href="https://github.com/sinkcup/coding-status/commits/2021">历史数据</a></li>
+            <li class="hS6GEzRhW2F__feedback"><a href="https://help.coding.net/">帮助中心</a></li>
+        </ul>
+        <ul class="nqqp3ZlxVUB__service-status-documentation">
+            <style>
+                .nqqp3ZlxVUB__status-icon {
+                    border-radius: 15px;
+                    display: inline-block;
+                    height: 15px;
+                    position: relative;
+                    width: 15px
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__available {
+                    background-color: #0da960
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__available::after {
+                    bottom: 1.5px;
+                    color: #fff;
+                    content: '✓';
+                    display: inline-block;
+                    position: relative;
+                    text-align: center;
+                    width: 15px
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__disruption {
+                    background-color: #ff8000
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__disruption::after {
+                    bottom: 1.5px;
+                    color: #fff;
+                    content: '!';
+                    display: inline-block;
+                    position: relative;
+                    text-align: center;
+                    width: 15px
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__outage {
+                    background-color: #dd4b39
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__outage::after {
+                    bottom: 1.5px;
+                    color: #fff;
+                    content: '×';
+                    display: inline-block;
+                    position: relative;
+                    text-align: center;
+                    width: 15px
+                }
+
+                ul.nqqp3ZlxVUB__service-status-documentation {
+                    color: #767676;
+                    font-size: 13px;
+                    list-style: none;
+                    padding: 0
+                }
+
+                ul.nqqp3ZlxVUB__service-status-documentation li {
+                    display: inline-block
+                }
+
+                ul.nqqp3ZlxVUB__service-status-documentation .nqqp3ZlxVUB__with-margin {
+                    margin: 5px
+                }
+
+                ul.nqqp3ZlxVUB__service-status-documentation .nqqp3ZlxVUB__status-icon {
+                    bottom: -1.5px;
+                    margin-right: 5px
+                }
+            </style>
+            <li class="nqqp3ZlxVUB__with-margin"> <span
+                    class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__available"></span><span>Available</span> </li>
+            <li class="nqqp3ZlxVUB__with-margin"> <span
+                    class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__disruption"></span><span>Service disruption</span>
+            </li>
+            <li class="nqqp3ZlxVUB__with-margin"> <span
+                    class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__outage"></span><span>Service outage</span> </li>
+        </ul>
+        <div class="vELTxyMBVik__footer">
+            <style>
+                .vELTxyMBVik__footer {
+                    width: 100%;
+                    color: #666;
+                    font-size: 12px;
+                    text-align: center;
+                    border-top: 1px solid
+                }
+            </style>
+            <p>最后更新: 2021-12-19 23:20:29 CST</p>
+        </div>
+    </main>
+</body>
+
+</html>

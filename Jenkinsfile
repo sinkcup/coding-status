@@ -6,6 +6,10 @@ pipeline {
         script: 'date -u +%Y',
         returnStdout: true
     ).trim()
+    DATE = sh(
+        script: 'date -u +%Y-%m-%d',
+        returnStdout: true
+    ).trim()
   }
   stages {
     stage('加载缓存') {
@@ -55,7 +59,8 @@ pipeline {
           php index.php > /root/index.html
           git checkout gh-pages
           cp /root/index.html index.html
-          git add index.html
+          cp index.html ${DATE}.html
+          git add index.html ${DATE}.html
           git commit -m 'docs: update'
           git push --force origin gh-pages
           """

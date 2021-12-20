@@ -414,6 +414,24 @@
             </style>
             <p>最后更新: <?=$dt->format('Y-m-d H:i:s T')?></p>
         </div>
+        <div class="comments">
+            <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.css">
+            <script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
+            <div id="gitalk-container"></div>
+            <script>
+                var gitalk = new Gitalk({
+                    clientID: '9460d2584160a2f00ffe',
+                    clientSecret: '99924033496d75f9fab61112a66c6b1933a567de',
+                    repo: 'coding-status',
+                    owner: 'sinkcup',
+                    admin: ['sinkcup'],
+                    id: "<?='/' . $dt->format('Y-m-d') . '.html'?>",
+                    distractionFreeMode: true
+                    })
+
+                    gitalk.render('gitalk-container')
+            </script>
+        </div>
     </main>
 </body>
 

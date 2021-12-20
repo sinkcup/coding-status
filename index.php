@@ -1,6 +1,6 @@
 <?php
-
-$dt = new DateTime("now", new DateTimeZone('Asia/Shanghai'));
+date_default_timezone_set('Asia/Shanghai');
+$dt = new DateTime("now");
 
 function getTemplate($time, $defaultStatus = 'disruption') {
     $template = [];

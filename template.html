@@ -138,6 +138,9 @@
         .status-piece.disruption {
             background-color: #ff8000;
         }
+        .status-piece.unknown {
+            background-color: #cdcdcd;
+        }
     </style>
 </head>
 
@@ -231,7 +234,7 @@
             </thead>
             <tbody>
                 <tr>
-                <td class="product-name"> 持续集成 </td>
+                    <td class="product-name"> 持续集成 </td>
                     <td class="product-hour" colspan="8">
                         <?php
                         foreach ($ciData as $minute => $status) {
@@ -243,7 +246,11 @@
                 <tr>
                     <td class="product-name"> 项目协同 </td>
                     <td class="product-hour" colspan="8">
-                        TODO
+                        <?php
+                        foreach ($projectData as $minute => $status) {
+                            echo "<span class='status-piece ${status}'></span>";
+                        }
+                        ?>
                     </td>
                 </tr>
                 <tr>
@@ -353,6 +360,20 @@
                     width: 15px
                 }
 
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__information {
+                    background-color: #808080
+                }
+
+                .nqqp3ZlxVUB__status-icon.nqqp3ZlxVUB__information::after {
+                    bottom: 1.5px;
+                    color: #fff;
+                    content: '-';
+                    display: inline-block;
+                    position: relative;
+                    text-align: center;
+                    width: 15px
+                }
+
                 ul.nqqp3ZlxVUB__service-status-documentation {
                     color: #767676;
                     font-size: 13px;
@@ -376,10 +397,10 @@
             <li class="nqqp3ZlxVUB__with-margin"> <span
                     class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__available"></span><span>Available</span> </li>
             <li class="nqqp3ZlxVUB__with-margin"> <span
+                    class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__information"></span><span>Service unknown</span>
+            <li class="nqqp3ZlxVUB__with-margin"> <span
                     class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__disruption"></span><span>Service disruption</span>
             </li>
-            <li class="nqqp3ZlxVUB__with-margin"> <span
-                    class="nqqp3ZlxVUB__status-icon nqqp3ZlxVUB__outage"></span><span>Service outage</span> </li>
         </ul>
         <div class="vELTxyMBVik__footer">
             <style>

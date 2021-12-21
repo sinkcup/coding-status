@@ -30,4 +30,6 @@ if ($handle) {
     fclose($handle);
 }
 
+$domain = file_exists('CNAME') ? file_get_contents('CNAME') : null;
+$homeUrl = !empty($domain) ? 'https://' . $domain : '/';
 require_once 'template.html';

@@ -55,10 +55,9 @@ pipeline {
           git commit -m "docs: test ${currentBuild.currentResult}"
           TZ=Asia/Shanghai git log --reverse --pretty=format:"%ad | %s" --since=midnight > git.log
           git push origin ${DATA_BRANCH}
-          cp /root/index.php /root/template.html .
-          php index.php > /root/index.html
           git checkout gh-pages
-          cp /root/index.html index.html
+          cp /root/index.php /root/template.html .
+          php index.php > index.html
           cp index.html ${DATE}.html
           git add index.html ${DATE}.html
           git commit -m 'docs: update'

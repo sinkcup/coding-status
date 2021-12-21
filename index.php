@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Asia/Shanghai');
-$dt = new DateTime("now");
+$now = time();
 
 function getTemplate($time, $defaultStatus = 'disruption') {
     $template = [];
-    $minute = $time->format("H") * 60 + $time->format("i");
+    $minute = date('H', $time) * 60 + date('i', $time);
     for ($i = 0; $i < 1440; $i += 5) {
         if ($i > 1380 || $i > $minute) {
             $template[$i] = 'todo';
@@ -14,22 +14,20 @@ function getTemplate($time, $defaultStatus = 'disruption') {
     }
     return $template;
 }
-$ciData = getTemplate($dt);
-$projectData = getTemplate($dt, 'unknown');
+$ciData = getTemplate($now);
+$projectData = getTemplate($now, 'unknown');
 
 $handle = @fopen("git.log", "r");
 if ($handle) {
     while (($buffer = fgets($handle, 4096)) !== false) {
         $tmp = explode(" | ", $buffer);
         $date = trim($tmp[0]);
-        $thisTime = strtotime($date);
-        $dt->setTimestamp($thisTime);
-        $key = $dt->format("H") * 60 + floor($dt->format("i") / 5) * 5;
+        $time = strtotime($date);
+        $key = date('H', $time) * 60 + floor(date('i', $time) / 5) * 5;
         $ciData[$key] = 'available';
         $projectData[$key] = stripos($tmp[1], 'success') !== false ? 'available' : 'disruption';
     }
     fclose($handle);
 }
 
-$dt->setTimestamp(time());
 require_once 'template.html';

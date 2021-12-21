@@ -302,14 +302,10 @@
                     margin-left: 5px
                 }
             </style>
-            <?php
-            if ($dt > new DateTime('2021-12-20 23:59:59')) {
-                echo "<li class=\"hS6GEzRhW2F__dot-after\"><a href=\"" . $dt->sub(new DateInterval('P1D'))->format('Y-m-d') . ".html\">昨日报表</a></li>";
-            }
-            ?>
+            <li class="hS6GEzRhW2F__dot-after"><a href="<?=date('Y-m-d', time() - 86400)?>.html">昨日报表</a></li>
             <li class="hS6GEzRhW2F__utc-display">时区：UTC+8 亚洲/上海</li>
             <li class="hS6GEzRhW2F__dot-after hS6GEzRhW2F__history"><a
-                    href="https://github.com/sinkcup/coding-status/commits/<?=$dt->format('Y')?>">原始数据</a></li>
+                    href="https://github.com/sinkcup/coding-status/commits/<?=date('Y')?>">原始数据</a></li>
             <li class="hS6GEzRhW2F__feedback"><a href="https://github.com/sinkcup/coding-status/issues/1">参与开源</a></li>
         </ul>
         <ul class="nqqp3ZlxVUB__service-status-documentation">
@@ -416,14 +412,14 @@
                     border-top: 1px solid
                 }
             </style>
-            <p>最后更新: <?=$dt->format('Y-m-d H:i:s T')?></p>
+            <p>最后更新: <?=date('Y-m-d H:i:s T')?></p>
         </div>
         <div class="comments">
             <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.css">
             <script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
             <div id="gitalk-container"></div>
             <script>
-                var dateHtml = "<?=$dt->format('Y-m-d') . '.html'?>";
+                var dateHtml = "<?=date('Y-m-d') . '.html'?>";
                 var body = location.href;
                 if (location.href.indexOf(dateHtml) === -1) {
                     body += dateHtml;

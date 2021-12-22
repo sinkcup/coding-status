@@ -63,6 +63,17 @@ pipeline {
           git commit -m 'docs: update'
           git push --force origin gh-pages
           """
+          withCredentials([sshUserPrivateKey(credentialsId: GITHUB_DEPLOY_KEY, keyFileVariable: 'id_rsa')]) {
+            sh """
+              echo "Host github.com" >> ~/.ssh/config
+              echo "Hostname github.com" >> ~/.ssh/config
+              echo "IdentityFile=${id_rsa}" >> ~/.ssh/config
+            """
+            sh "git remote add github ${GITHUB_REPO_URL}"
+            sh "git push --force github gh-pages"
+            sh "git checkout ${DATA_BRANCH}"
+            sh "git push github ${DATA_BRANCH}"
+          }
         }
       }
       steps {

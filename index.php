@@ -14,18 +14,34 @@ function getTemplate($time, $defaultStatus = 'disruption') {
     }
     return $template;
 }
-$ciData = getTemplate($now);
-$projectData = getTemplate($now, 'unknown');
+$ciStatus = getTemplate($now);
+$projectStatus = getTemplate($now, 'unknown');
+$artifactStatus = $projectStatus;
 
 $handle = @fopen("git.log", "r");
 if ($handle) {
     while (($buffer = fgets($handle, 4096)) !== false) {
         $tmp = explode(" | ", $buffer);
         $date = trim($tmp[0]);
+        $message = $tmp[1];
+        $hash = $tmp[2];
         $time = strtotime($date);
         $key = date('H', $time) * 60 + floor(date('i', $time) / 5) * 5;
-        $ciData[$key] = 'available';
-        $projectData[$key] = stripos($tmp[1], 'success') !== false ? 'available' : 'disruption';
+        $ciStatus[$key] = 'available';
+        if (stripos($message, 'success') !== false) {
+            $projectStatus[$key] = 'available';
+            $artifactStatus[$key] = 'available';
+            continue;
+        }
+        $testsuites = new SimpleXMLElement(file_get_contents('junit.xml'));
+        foreach ($testsuites->testsuite[0] as $testsuite) {
+            if ($testsuite['name'] == 'Tests\Acceptance\ArtifactTest') {
+                $artifactStatus[$key] = $testsuite['errors'] == 0 ? 'available' : 'disruption';
+            }
+            if ($testsuite['name'] == 'Tests\Acceptance\IssueTest') {
+                $projectStatus[$key] = $testsuite['errors'] == 0 ? 'available' : 'disruption';
+            }
+        }
     }
     fclose($handle);
 }

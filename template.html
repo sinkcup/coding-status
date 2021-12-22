@@ -237,7 +237,7 @@
                     <td class="product-name"> 持续集成 </td>
                     <td class="product-hour" colspan="8">
                         <?php
-                        foreach ($ciData as $minute => $status) {
+                        foreach ($ciStatus as $minute => $status) {
                             echo "<span class='status-piece ${status}'></span>";
                         }
                         ?>
@@ -247,7 +247,7 @@
                     <td class="product-name"> 项目协同 </td>
                     <td class="product-hour" colspan="8">
                         <?php
-                        foreach ($projectData as $minute => $status) {
+                        foreach ($projectStatus as $minute => $status) {
                             echo "<span class='status-piece ${status}'></span>";
                         }
                         ?>
@@ -261,14 +261,13 @@
                 </tr>
                 <tr>
                     <td class="product-name"> 制品仓库 </td>
-                    <td class="product-hour"> </td>
-                    <td class="product-hour"> </td>
-                    <td class="product-hour"> </td>
-                    <td class="product-hour"> TO </td>
-                    <td class="product-hour"> DO </td>
-                    <td class="product-hour"> </td>
-                    <td class="product-hour"> </td>
-                    <td class="product-hour"> </td>
+                    <td class="product-hour" colspan="8">
+                        <?php
+                        foreach ($artifactStatus as $minute => $status) {
+                            echo "<span class='status-piece ${status}'></span>";
+                        }
+                        ?>
+                    </td>
                 </tr>
             </tbody>
         </table>

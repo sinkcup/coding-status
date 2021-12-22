@@ -3,11 +3,11 @@ pipeline {
   environment{
     DOCKER_CACHE_EXISTS = fileExists '/root/.cache/docker/php-8.0.tar'
     DATA_BRANCH = sh(
-        script: 'date -u +%Y',
+        script: 'date +%Y',
         returnStdout: true
     ).trim()
     DATE = sh(
-        script: 'date -u +%Y-%m-%d',
+        script: 'date +%Y-%m-%d',
         returnStdout: true
     ).trim()
   }

@@ -66,7 +66,7 @@ pipeline {
         }
       }
       steps {
-        sh "git clone https://${CODING_USERNAME}:${CODING_PASSWORD}@e.coding.net/sinkcup/coding-status/coding-sdk-php.git /root/coding-sdk-php"
+        sh "git clone ${GIT_HTTP_URL_SDK} /root/coding-sdk-php"
         sh '''
           cd /root/coding-sdk-php
           composer config -l | grep cache

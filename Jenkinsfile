@@ -53,7 +53,7 @@ pipeline {
           sh 'git add junit.xml'
           sh """
           git commit -m "docs: test ${currentBuild.currentResult}"
-          TZ=Asia/Shanghai git log --reverse --pretty=format:"%ad | %s" --since=midnight > git.log
+          TZ=Asia/Shanghai git log --date=local --reverse --pretty=format:"%ad | %s | %H" --since=midnight > git.log
           git push origin ${DATA_BRANCH}
           git checkout gh-pages
           cp /root/index.php /root/template.html .

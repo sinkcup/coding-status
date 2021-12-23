@@ -17,6 +17,7 @@ function getTemplate($time, $defaultStatus = 'disruption') {
 $ciStatus = getTemplate($now);
 $projectStatus = getTemplate($now, 'unknown');
 $artifactStatus = $projectStatus;
+$gitStatus = $projectStatus;
 
 $handle = @fopen("git.log", "r");
 if ($handle) {
@@ -31,15 +32,22 @@ if ($handle) {
         if (stripos($message, 'success') !== false) {
             $projectStatus[$key] = 'available';
             $artifactStatus[$key] = 'available';
+            $gitStatus[$key] = 'available';
             continue;
         }
         $testsuites = new SimpleXMLElement(file_get_contents('junit.xml'));
         foreach ($testsuites->testsuite[0] as $testsuite) {
-            if ($testsuite['name'] == 'Tests\Acceptance\ArtifactTest') {
-                $artifactStatus[$key] = $testsuite['errors'] == 0 ? 'available' : 'disruption';
-            }
-            if ($testsuite['name'] == 'Tests\Acceptance\IssueTest') {
-                $projectStatus[$key] = $testsuite['errors'] == 0 ? 'available' : 'disruption';
+            $status = $testsuite['errors'] == 0 ? 'available' : 'disruption';
+            switch ($testsuite['name']) {
+                case 'Tests\Acceptance\ArtifactTest':
+                    $artifactStatus[$key] = $status;
+                    break;
+                case 'Tests\Acceptance\IssueTest':
+                    $projectStatus[$key] = $status;
+                    break;
+                case 'Tests\Acceptance\GitBranchTest':
+                    $gitStatus[$key] = $status;
+                    break;
             }
         }
     }

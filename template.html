@@ -255,7 +255,11 @@
                 <tr>
                     <td class="product-name"> 代码仓库 </td>
                     <td class="product-hour" colspan="8">
-                        TODO
+                        <?php
+                        foreach ($gitStatus as $minute => $status) {
+                            echo "<span class='status-piece ${status}'></span>";
+                        }
+                        ?>
                     </td>
                 </tr>
                 <tr>

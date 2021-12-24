@@ -2,10 +2,11 @@ pipeline {
   agent any
   environment{
     DOCKER_CACHE_EXISTS = fileExists '/root/.cache/docker/php-8.0.tar'
-    DATA_BRANCH = sh(
+    YEAR = sh(
         script: 'date +%Y',
         returnStdout: true
     ).trim()
+    DATA_BRANCH = "${YEAR}yr"
     DATE = sh(
         script: 'date +%Y-%m-%d',
         returnStdout: true

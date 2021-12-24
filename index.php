@@ -56,4 +56,10 @@ if ($handle) {
 
 $domain = file_exists('CNAME') ? file_get_contents('CNAME') : null;
 $homeUrl = !empty($domain) ? 'https://' . $domain : '/';
+$allStatus = [
+    '持续集成' => $ciStatus,
+    '项目协同' => $projectStatus,
+    '代码仓库' => $gitStatus,
+    '制品仓库' => $artifactStatus,
+];
 require_once 'template.html';

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CODING Status Dashboard</title>
+    <title>CODING Status Dashboard <?=date('Y-m-d')?></title>
     <meta http-equiv="refresh" content="360" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <link href="https://assets.codehub.cn/static/favicon.ico" rel="icon">
@@ -44,7 +44,6 @@
 
         .product-hour {
             background-color: #fcfcfc;
-            text-align: center
         }
 
         .date-offset {
@@ -126,7 +125,7 @@
         }
 
         .status-piece {
-            display: inline-block;
+            display: inline-flex;
             height: 1em;
             width: 0.3472%;
             min-width: 1px;
@@ -136,6 +135,12 @@
         }
         .status-piece.disruption {
             background-color: #ff8000;
+        }
+        .status-piece:hover {
+            width: 3em;
+        }
+        .status-piece:hover::after {
+            content: attr(data-content);
         }
         .status-piece.unknown {
             background-color: #cdcdcd;
@@ -172,108 +177,78 @@
                     font-size: 18px;
                     font-weight: 600
                 }
-            </style>CODING.net Status Dashboard
+            </style>CODING.net Status Dashboard <?=date('Y-m-d')?>
         </h1>
-        <div>
+        <div class="lQjRvVaKLNV__hour">
             <style>
-                .lQjRvVaKLNV__banner {
-                    background-color: #fff176;
-                    border-radius: 5px;
-                    padding: 5px 8px;
-                    margin: 8px
+                .lQjRvVaKLNV__hour {
+                    display: flex;
+                    font-size: 13px;
+                }
+                .lQjRvVaKLNV__hour ul {
+                    color: #767676;
+                    flex: 1 1 auto;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    list-style: none;
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding: 0
+                }
+                .lQjRvVaKLNV__hour ul li {
+                    display: inline-block;
+                    width: 12%;
                 }
             </style>
+            <div style="width: 6em;"></div>
+            <ul>
+                <li>00:00</li>
+                <li>3</li>
+                <li>6</li>
+                <li>9:00</li>
+                <li>12</li>
+                <li>15</li>
+                <li>18:00</li>
+                <li>21</li>
+            </ul>
         </div>
+        <style>
+            .lQjRvVaKLNV__row {
+                display: flex;
+                border-top: 2px solid #eee;
+            }
+            .lQjRvVaKLNV__row .product-name {
+                padding: 1em 0;
+                color: #767676;
+                width: 6em;
+                font-size: 13px;
+                color: #000;
+                text-align: center;
+                border-right: 1px solid #eee;
+            }
+            .lQjRvVaKLNV__row .product-status {
+                padding: 1em 0;
+                flex: 1 1 auto;
+            }
+        </style>
+        <?php
+        foreach ($allStatus as $name => $productStatus) {
+        ?>
+        <div class="lQjRvVaKLNV__row">
+            <div class="product-name"><?=$name?></div>
+            <div class="product-status">
+                <?php
+                foreach ($productStatus as $minute => $status) {
+                    $content = floor($minute / 60) . ':' . sprintf("%02d", $minute % 60);
+                    echo "<span class='status-piece ${status}' data-content='${content}'></span>";
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
 
-        <table class="main-dashboard-table">
-            <thead>
-                <tr>
-                    <th> </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">0</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">3</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">6</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">9am</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">12</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">15</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">18pm</div>
-                        </div>
-                    </th>
-                    <th>
-                        <div class="date-offset">
-                            <div class="date-header">21</div>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="product-name"> 持续集成 </td>
-                    <td class="product-hour" colspan="8">
-                        <?php
-                        foreach ($ciStatus as $minute => $status) {
-                            echo "<span class='status-piece ${status}'></span>";
-                        }
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="product-name"> 项目协同 </td>
-                    <td class="product-hour" colspan="8">
-                        <?php
-                        foreach ($projectStatus as $minute => $status) {
-                            echo "<span class='status-piece ${status}'></span>";
-                        }
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="product-name"> 代码仓库 </td>
-                    <td class="product-hour" colspan="8">
-                        <?php
-                        foreach ($gitStatus as $minute => $status) {
-                            echo "<span class='status-piece ${status}'></span>";
-                        }
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="product-name"> 制品仓库 </td>
-                    <td class="product-hour" colspan="8">
-                        <?php
-                        foreach ($artifactStatus as $minute => $status) {
-                            echo "<span class='status-piece ${status}'></span>";
-                        }
-                        ?>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <ul class="hS6GEzRhW2F__table-documentation">
             <style>
                 ul.hS6GEzRhW2F__table-documentation {

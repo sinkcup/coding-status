@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="4.392395">
-    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.671290">
-      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.671290"/>
+  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="5.121012">
+    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.608989">
+      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.608989"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.229031">
-      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="10" assertions="1" time="0.229031"/>
+    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.269724">
+      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="10" assertions="1" time="0.269724"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="2.217836">
-      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="11" assertions="6" time="2.217836"/>
+    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="3.044340">
+      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="11" assertions="6" time="3.044340"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.980136">
-      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="9" assertions="4" time="0.980136"/>
+    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.979233">
+      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="9" assertions="4" time="0.979233"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.294102">
-      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="10" assertions="1" time="0.294102"/>
+    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.218725">
+      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="10" assertions="1" time="0.218725"/>
     </testsuite>
   </testsuite>
 </testsuites>

@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="0" errors="5" warnings="0" failures="0" skipped="0" time="0.002660">
-    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.001558">
-      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="10" assertions="0" time="0.001558">
+  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="0" errors="5" warnings="0" failures="0" skipped="0" time="0.002638">
+    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.001625">
+      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="0" time="0.001625">
         <error type="InvalidArgumentException">Tests\Acceptance\ArtifactTest::testUploadAndDownload
 InvalidArgumentException: Please set CODING_PERSONAL_TOKEN or CODING_PROJECT_TOKEN environment variables
 
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:24
+/root/coding-sdk-php/tests/Acceptance/TestCase.php:26
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000277">
-      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="10" assertions="0" time="0.000277">
+    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000264">
+      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="0" time="0.000264">
         <error type="InvalidArgumentException">Tests\Acceptance\GitBranchTest::testIndex
 InvalidArgumentException: Please set CODING_PERSONAL_TOKEN or CODING_PROJECT_TOKEN environment variables
 
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:24
+/root/coding-sdk-php/tests/Acceptance/TestCase.php:26
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000263">
-      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="11" assertions="0" time="0.000263">
+    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000242">
+      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="0" time="0.000242">
         <error type="InvalidArgumentException">Tests\Acceptance\IssueTest::testCrud
 InvalidArgumentException: Please set CODING_PERSONAL_TOKEN or CODING_PROJECT_TOKEN environment variables
 
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:24
+/root/coding-sdk-php/tests/Acceptance/TestCase.php:26
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000293">
-      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="9" assertions="0" time="0.000293">
+    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000266">
+      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="0" time="0.000266">
         <error type="InvalidArgumentException">Tests\Acceptance\IterationTest::testCrud
 InvalidArgumentException: Please set CODING_PERSONAL_TOKEN or CODING_PROJECT_TOKEN environment variables
 
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:24
+/root/coding-sdk-php/tests/Acceptance/TestCase.php:26
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000270">
-      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="10" assertions="0" time="0.000270">
+    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000240">
+      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="0" time="0.000240">
         <error type="InvalidArgumentException">Tests\Acceptance\ProjectSettingTest::testGetIssueStatuses
 InvalidArgumentException: Please set CODING_PERSONAL_TOKEN or CODING_PROJECT_TOKEN environment variables
 
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:24
+/root/coding-sdk-php/tests/Acceptance/TestCase.php:26
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>

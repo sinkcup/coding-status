@@ -1,55 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="0" errors="5" warnings="0" failures="0" skipped="0" time="0.013884">
-    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.011441">
-      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="0" time="0.011441">
-        <error type="TypeError">Tests\Acceptance\ArtifactTest::testUploadAndDownload
-TypeError: Coding\Client::setPersonalToken(): Argument #1 ($token) must be of type string, bool given, called in /root/coding-sdk-php/tests/Acceptance/TestCase.php on line 35
-
-/root/coding-sdk-php/src/Client.php:73
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:35
-/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
-      </testcase>
+  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="3.583450">
+    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.472731">
+      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.472731"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000661">
-      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="0" time="0.000661">
-        <error type="TypeError">Tests\Acceptance\GitBranchTest::testIndex
-TypeError: Coding\Client::setPersonalToken(): Argument #1 ($token) must be of type string, bool given, called in /root/coding-sdk-php/tests/Acceptance/TestCase.php on line 35
-
-/root/coding-sdk-php/src/Client.php:73
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:35
-/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
-      </testcase>
+    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.134875">
+      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="1" time="0.134875"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000579">
-      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="0" time="0.000579">
-        <error type="TypeError">Tests\Acceptance\IssueTest::testCrud
-TypeError: Coding\Client::setPersonalToken(): Argument #1 ($token) must be of type string, bool given, called in /root/coding-sdk-php/tests/Acceptance/TestCase.php on line 35
-
-/root/coding-sdk-php/src/Client.php:73
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:35
-/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
-      </testcase>
+    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="1.879022">
+      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="6" time="1.879022"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000616">
-      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="0" time="0.000616">
-        <error type="TypeError">Tests\Acceptance\IterationTest::testCrud
-TypeError: Coding\Client::setPersonalToken(): Argument #1 ($token) must be of type string, bool given, called in /root/coding-sdk-php/tests/Acceptance/TestCase.php on line 35
-
-/root/coding-sdk-php/src/Client.php:73
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:35
-/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
-      </testcase>
+    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.863672">
+      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="4" time="0.863672"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.000587">
-      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="0" time="0.000587">
-        <error type="TypeError">Tests\Acceptance\ProjectSettingTest::testGetIssueStatuses
-TypeError: Coding\Client::setPersonalToken(): Argument #1 ($token) must be of type string, bool given, called in /root/coding-sdk-php/tests/Acceptance/TestCase.php on line 35
-
-/root/coding-sdk-php/src/Client.php:73
-/root/coding-sdk-php/tests/Acceptance/TestCase.php:35
-/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
-      </testcase>
+    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.233150">
+      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="1" time="0.233150"/>
     </testsuite>
   </testsuite>
 </testsuites>

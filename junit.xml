@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="3.130467">
-    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.403172">
-      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.403172"/>
+  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="10" errors="1" warnings="0" failures="0" skipped="0" time="2.715254">
+    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.385437">
+      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.385437"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.111765">
-      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="1" time="0.111765"/>
+    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.124977">
+      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="1" time="0.124977"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="1.457347">
-      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="6" time="1.457347"/>
+    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.919789">
+      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="0" time="0.919789">
+        <error type="GuzzleHttp\Exception\ConnectException">Tests\Acceptance\IssueTest::testCrud
+GuzzleHttp\Exception\ConnectException: cURL error 52: Empty reply from server (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://e.coding.net/open-api
+
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:210
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:158
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:110
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php:47
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:28
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php:48
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php:64
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Middleware.php:31
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php:71
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Middleware.php:63
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/HandlerStack.php:75
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Client.php:331
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Client.php:168
+/root/coding-sdk-php/vendor/guzzlehttp/guzzle/src/Client.php:187
+/root/coding-sdk-php/src/Client.php:55
+/root/coding-sdk-php/src/Client.php:70
+/root/coding-sdk-php/src/Issue.php:62
+/root/coding-sdk-php/tests/Acceptance/IssueTest.php:23
+/root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
+      </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="1.001585">
-      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="4" time="1.001585"/>
+    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="1.023717">
+      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="4" time="1.023717"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.156598">
-      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="1" time="0.156598"/>
+    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.261333">
+      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="1" time="0.261333"/>
     </testsuite>
   </testsuite>
 </testsuites>

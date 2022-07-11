@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="4" errors="4" warnings="0" failures="0" skipped="0" time="0.530845">
-    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.292070">
-      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.292070"/>
+  <testsuite name="/root/coding-sdk-php/tests/Acceptance" tests="5" assertions="4" errors="4" warnings="0" failures="0" skipped="0" time="0.661236">
+    <testsuite name="Tests\Acceptance\ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.324916">
+      <testcase name="testUploadAndDownload" class="Tests\Acceptance\ArtifactTest" classname="Tests.Acceptance.ArtifactTest" file="/root/coding-sdk-php/tests/Acceptance/ArtifactTest.php" line="12" assertions="4" time="0.324916"/>
     </testsuite>
-    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.064526">
-      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="0" time="0.064526">
+    <testsuite name="Tests\Acceptance\GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.128141">
+      <testcase name="testIndex" class="Tests\Acceptance\GitBranchTest" classname="Tests.Acceptance.GitBranchTest" file="/root/coding-sdk-php/tests/Acceptance/GitBranchTest.php" line="12" assertions="0" time="0.128141">
         <error type="Coding\Exceptions\ApiError">Tests\Acceptance\GitBranchTest::testIndex
 Coding\Exceptions\ApiError: failed to get branches
 
@@ -16,8 +16,8 @@ Coding\Exceptions\ApiError: failed to get branches
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.056234">
-      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="0" time="0.056234">
+    <testsuite name="Tests\Acceptance\IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.074968">
+      <testcase name="testCrud" class="Tests\Acceptance\IssueTest" classname="Tests.Acceptance.IssueTest" file="/root/coding-sdk-php/tests/Acceptance/IssueTest.php" line="13" assertions="0" time="0.074968">
         <error type="Coding\Exceptions\ApiError">Tests\Acceptance\IssueTest::testCrud
 Coding\Exceptions\ApiError: ProjectAccessDeny
 
@@ -28,8 +28,8 @@ Coding\Exceptions\ApiError: ProjectAccessDeny
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.063907">
-      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="0" time="0.063907">
+    <testsuite name="Tests\Acceptance\IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.065030">
+      <testcase name="testCrud" class="Tests\Acceptance\IterationTest" classname="Tests.Acceptance.IterationTest" file="/root/coding-sdk-php/tests/Acceptance/IterationTest.php" line="11" assertions="0" time="0.065030">
         <error type="Coding\Exceptions\ApiError">Tests\Acceptance\IterationTest::testCrud
 Coding\Exceptions\ApiError: ProjectAccessDeny
 
@@ -40,8 +40,8 @@ Coding\Exceptions\ApiError: ProjectAccessDeny
 /root/coding-sdk-php/vendor/phpunit/phpunit/phpunit:92</error>
       </testcase>
     </testsuite>
-    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.054108">
-      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="0" time="0.054108">
+    <testsuite name="Tests\Acceptance\ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.068181">
+      <testcase name="testGetIssueStatuses" class="Tests\Acceptance\ProjectSettingTest" classname="Tests.Acceptance.ProjectSettingTest" file="/root/coding-sdk-php/tests/Acceptance/ProjectSettingTest.php" line="12" assertions="0" time="0.068181">
         <error type="Coding\Exceptions\ApiError">Tests\Acceptance\ProjectSettingTest::testGetIssueStatuses
 Coding\Exceptions\ApiError: ProjectAccessDeny
 
